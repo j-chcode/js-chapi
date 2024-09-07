@@ -3,9 +3,9 @@ const retime = (data) => {
 
   if (!targetTime) {
     return { 
-	  status: 400,
-	  error: "Lütfen bir saat formatı girin. Örnek: '23:00'"
-	}
+      status: 400,
+      error: "Lütfen bir saat formatı girin. Örnek: '23:00'"
+    }
   }
 
   const now = new Date();
@@ -20,7 +20,7 @@ const retime = (data) => {
   const remainingSeconds = Math.floor(timeDifference / 1000);
 
   return {
-	status: 200,
+    status: 200,
     result: remainingSeconds 
   }
 }
