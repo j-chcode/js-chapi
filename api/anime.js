@@ -1,4 +1,4 @@
-const anime = (type, tag) => {
+const anime = async (type, tag) => {
   const axios = require('axios');
   
 	try {
