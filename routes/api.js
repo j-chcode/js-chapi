@@ -11,9 +11,7 @@ const api = {};
 let service_infos = [];
 let service_count = 0;
 
-
 app.use(express.json());
-
 
 files.forEach(file => {
   const filePath = path.join(directoryPath, file);
@@ -32,26 +30,12 @@ files.forEach(file => {
 });
 
 app.use((req, res, next) => {
-
-
- 
   const forwardedFor = req.headers['x-forwarded-for'];
-
   const clientIp = forwardedFor ? forwardedFor.split(',')[0].trim() : req.connection.remoteAddress;
-
-
-
-
-
-
   
   console.log(`📝 | IP: ${clientIp} ${req.method} ${req.url.slice(0, 25)}`);
   next();
 });
-
-
-
-
 
 app.get("/", (req, res) => {
   let services = service_infos;
@@ -85,6 +69,10 @@ app.get(`/${service_infos[1]}`, async (req, res) => {
 });
 
 app.post(`/${service_infos[0]}`, async (req, res) => {
+  if(req.method !== 'POST') {
+    return res.status(400).send(`Sadece post isteği geçerlidir.`);
+  }
+  
   const { expression } = req.body;
   const data = await api.calculate(expression);
   return res.status(data.status).json(data);
