@@ -1,5 +1,5 @@
 const formtime = (start, end) => {
-	const startTimestamp = start;
+  const startTimestamp = start;
   const endTimestamp = end;
 
   if (!startTimestamp || !endTimestamp) {
@@ -20,10 +20,15 @@ const formtime = (start, end) => {
     }
   }
   
-  const totalMinutes = Math.floor(timeDifference / 1000 / 60);
+  // Toplam saniyeyi hesapla
+  const totalSeconds = Math.floor(timeDifference / 1000);
+  const totalMinutes = Math.floor(totalSeconds / 60);
   const hours = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;
-  const formattedResult = `${hours}H ${minutes}M`;
+  const seconds = totalSeconds % 60;
+
+  // Sonucu formatla
+  const formattedResult = `${hours}H ${minutes}M ${seconds}S`;
 
   return { 
     status: 200,
