@@ -37,7 +37,7 @@ const rewrite = (repeat, message) => {
 
   let result = "";
   for(let i = 0; i < repeat; i++) {
-      if(i < repeat) {
+      if(i < (repeat -1)) {
           result = `${result}${message} `;
       } else {
           result = `${result}${message}`;
