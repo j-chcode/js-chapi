@@ -99,6 +99,11 @@ app.get(`/${service_infos[service_infos.indexOf('anime')]}`, async (req, res) =>
   return res.status(200).json(data);
 });
 
+app.get(`/${service_infos[service_infos.indexOf('zerochan')]}`, async (req, res) => {
+  const data = await api.zerochan();
+  return res.status(200).json(data);
+});
+
 app.use((req, res, next) => {
   return res.status(404).send(`404 | Rota Bulunamadı: ${req.originalUrl}`);
 });
