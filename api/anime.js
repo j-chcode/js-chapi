@@ -7,7 +7,7 @@ const anime = async (type, tag, amount) => {
     let aMMo = amount;
     if(!amount) aMMo = 1;
     
-    for(let i = 0; i < amount; i++) {
+    for(let i = 0; i < aMMo; i++) {
       const response = await axios.get(`https://api.waifu.pics/${type}/${tag}`)
       imageUrl[len] = response.data.url; len++
     }
