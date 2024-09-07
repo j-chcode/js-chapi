@@ -13,7 +13,7 @@
     "node": ">=16.x"
   },
   "repository": {
-    "url": "https://chapi.glitch.me/api"
+    "url": "https://apich.vercel.app/api"
   },
   "license": "MIT",
   "keywords": [
