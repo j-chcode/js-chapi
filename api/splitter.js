@@ -13,7 +13,7 @@ const splitter = (text, separator, index) => {
     choose = result[index];
   }
   
-  url = `https://${window.location.hostname}/api/splitter?text=${text}&separator=${separator}&index=${index}`;
+  url = `https://apich.vercel.app/api/splitter?text=${text}&separator=${separator}&index=${index}`;
 
   return {
     status: statusCode,
