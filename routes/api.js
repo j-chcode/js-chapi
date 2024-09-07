@@ -94,7 +94,8 @@ app.post(`/${service_infos[service_infos.indexOf('calculate')]}`, async (req, re
 app.get(`/${service_infos[service_infos.indexOf('anime')]}`, async (req, res) => {
   const type = req.query.type;
   const tag = req.query.tag;
-  const data = await api.anime(type, tag);
+  const amount = req.query.amount;
+  const data = await api.anime(type, tag, amount);
   return res.status(200).json(data);
 });
 
