@@ -1,4 +1,7 @@
 const zerochan = async () => {
+  const axios = require('axios');
+  const cheerio = require('cheerio');
+  
   const url = 'https://www.zerochan.net';
   
   async function fetchImages() {
