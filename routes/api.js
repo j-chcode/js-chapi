@@ -47,13 +47,13 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get(`/${service_infos[6]}`, async (req, res) => {
+app.get(`/${service_infos[service_infos.indexOf('unixdate')]}`, async (req, res) => {
   const timestamp = req.query.timestamp;
   const data = await api.unixdate(timestamp);
   return res.status(data.status).json(data);
 });
 
-app.get(`/${service_infos[5]}`, async (req, res) => {
+app.get(`/${service_infos[service_infos.indexOf('splitter')]}`, async (req, res) => {
   const text = req.query.text;
   const separator = req.query.separator;
   const index = req.query.index;
@@ -61,27 +61,27 @@ app.get(`/${service_infos[5]}`, async (req, res) => {
   return res.status(data.status).json(data);
 });
 
-app.get(`/${service_infos[4]}`, async (req, res) => {
+app.get(`/${service_infos[service_infos.indexOf('rewrite')]}`, async (req, res) => {
   const repeat = req.query.repeat;
   const message = req.query.message;
   const data = await api.rewrite(repeat, message);
   return res.status(200).json(data);
 });
 
-app.get(`/${service_infos[3]}`, async (req, res) => {
+app.get(`/${service_infos[service_infos.indexOf('retime')]}`, async (req, res) => {
   const time = req.query.time;
   const data = await api.retime(time);
   return res.status(200).json(data);
 });
 
-app.get(`/${service_infos[2]}`, async (req, res) => {
+app.get(`/${service_infos[service_infos.indexOf('formtime')]}`, async (req, res) => {
   const start = req.query.start;
   const end = req.query.end;
   const data = await api.formtime(start, end);
   return res.status(200).json(data);
 });
 
-app.post(`/${service_infos[1]}`, async (req, res) => {
+app.post(`/${service_infos[service_infos.indexOf('calculate')]}`, async (req, res) => {
   if(req.method !== 'POST') {
     return res.status(400).send(`Sadece post isteği geçerlidir.`);
   }
@@ -91,7 +91,7 @@ app.post(`/${service_infos[1]}`, async (req, res) => {
   return res.status(data.status).json(data);
 });
 
-app.get(`/${service_infos[0]}`, async (req, res) => {
+app.get(`/${service_infos[service_infos.indexOf('anime')]}`, async (req, res) => {
   const type = req.query.type;
   const tag = req.query.tag;
   const data = await api.anime(type, tag);
