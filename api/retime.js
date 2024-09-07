@@ -2,7 +2,10 @@ const retime = (data) => {
 	const targetTime = data;
 
   if (!targetTime) {
-    return res.status(400).json({ error: "Lütfen bir saat formatı girin. Örnek: '23:00'" });
+    return { 
+	  status: 400,
+	  error: "Lütfen bir saat formatı girin. Örnek: '23:00'"
+	}
   }
 
   const now = new Date();
@@ -16,7 +19,10 @@ const retime = (data) => {
   const timeDifference = targetDateTime - now;
   const remainingSeconds = Math.floor(timeDifference / 1000);
 
-  return { remainingSeconds }
+  return {
+	status: 200,
+    result: remainingSeconds 
+  }
 }
 
 module.exports = retime;
