@@ -12,7 +12,7 @@ const anime = async (type, tag) => {
   catch (error) {
     return {
       status: 400,
-      error: "Bir hata oluştu. Lütfen tekrar deneyin."
+      error: "Bir hata oluştu. Lütfen tekrar deneyin.",
       string: error.message
     }
   }
