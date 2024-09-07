@@ -69,7 +69,7 @@ app.get(`/${service_infos[2]}`, async (req, res) => {
 });
 
 app.get(`/${service_infos[1]}`, async (req, res) => {
-  const repeat = req.query.time;
+  const time = req.query.time;
   const data = await api.retime(time);
   return res.status(200).json(data);
 });
