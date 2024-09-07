@@ -95,7 +95,7 @@ app.get(`/${service_infos[service_infos.indexOf('anime')]}`, async (req, res) =>
   const type = req.query.type;
   const tag = req.query.tag;
   const amount = req.query.amount;
-  const data = await api.anime(type, tag, amount);
+  const data = await api.anime(type, tag, parseInt(amount));
   return res.status(200).json(data);
 });
 
