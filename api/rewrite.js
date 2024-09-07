@@ -35,7 +35,14 @@ const rewrite = (repeat, message) => {
     }
   }
 
-  const result = Array(repeat).fill(message).join(' ');
+  let result = "";
+  for(let i = 0; i < repeat; i++) {
+      if(i < repeat) {
+          result = `${result}${message} `;
+      } else {
+          result = `${result}${message}`;
+      }
+  }
   
   return {
     status: "200",
