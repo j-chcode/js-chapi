@@ -1,7 +1,8 @@
 const calculate = (data) => {
+  const math = require('mathjs');
   
   try {
-    let calc = eval(data);
+    let calc = math.evaluate(data);
     const result = calc.toFixed(4);
     
     if(data == undefined) {
