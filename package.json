@@ -1,0 +1,23 @@
+{
+  "name": "chapi",
+  "version": "1.0.0",
+  "description": "chcode api based",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=16.x"
+  },
+  "repository": {
+    "url": "https://chapi.glitch.me/api"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch"
+  ]
+}
