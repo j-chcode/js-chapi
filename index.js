@@ -26,7 +26,7 @@ const apis = new Promise(async (res, rej) => {
   res()
 });
 
-apis.then(async ()=>{
+apis.then(async () => {
   app.use("/api", await routes.api)
   console.log("✅ | Router Servisi: bağlandı")
 });
