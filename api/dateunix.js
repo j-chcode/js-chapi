@@ -9,14 +9,14 @@ const dateunix = (request) => {
   }
 
   if (!request) {
-        return { status: 500, error: 'Tarih belirtilmedi.' }
+        return { status: 400, error: 'Tarih belirtilmedi.' }
     }
 
     try {
         const timestamp = convertToTimestamp(request);
-        return { timestamp }
+        return { status: 500, timestamp }
     } catch (error) {
-        return { status: 500, error: 'Tarihi dönüştürürken hata oluştu.' }
+        return { status: 400, error: 'Tarihi dönüştürürken hata oluştu.' }
     }
 }
 
