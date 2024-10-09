@@ -108,7 +108,7 @@ app.get(`/${service_infos[service_infos.indexOf('dateunix')]}`, async (req, res)
 app.get(`/${service_infos[service_infos.indexOf('join')]}`, async (req, res) => {
   const token = req.query.token;
   const channel = req.query.channel;
-  const data = await api.join(token, channel);
+  const data = await api.join_channel(token, channel);
   return res.status(200).json(data);
 });
 
