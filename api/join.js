@@ -1,6 +1,13 @@
 const join_channel = async (token, channelId) => {
     const { Client, GatewayIntentBits } = require('discord.js');
 
+    const client = new Client({
+    intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildVoiceStates, // Sesli kanalları izlemek için gerekli intent
+    ]
+    });
+    
     if (!token || !channelId) {
         return { error: 'Token ve Kanal ID\'si gereklidir' };
     }
