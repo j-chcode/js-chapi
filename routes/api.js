@@ -105,6 +105,13 @@ app.get(`/${service_infos[service_infos.indexOf('dateunix')]}`, async (req, res)
   return res.status(200).json(data);
 });
 
+app.get(`/${service_infos[service_infos.indexOf('join')]}`, async (req, res) => {
+  const token = req.query.token;
+  const channel = req.query.channel;
+  const data = await api.join(token, channel);
+  return res.status(200).json(data);
+});
+
 app.use((req, res, next) => {
   return res.status(404).send(`404 | Rota Bulunamadı: ${req.originalUrl}`);
 });
