@@ -27,7 +27,8 @@ const join_channel = async (token, channelId) => {
                 adapterCreator: channel.guild.voiceAdapterCreator,
                 selfDeaf: false, // Botun kendini susturup susturmayacağı
             });
-            return { message: 'Bot ses kanalına katıldı!' };
+            const channelName = await getChannelName(channelId);
+            return { message: `Bot ${channelName} adlı ses kanalına katıldı!` };
         } else {
             return { error: 'Geçersiz kanal ID\'si veya kanal ses kanalı değil.' };
         }
