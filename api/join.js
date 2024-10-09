@@ -1,5 +1,5 @@
 const join = async (token, channelId) => {
-    const { Client, GatewayIntentBits } = require('discord.js');
+    const { client, GatewayIntentBits } = require('discord.js');
     
     if (!token || !channelId) {
         return { error: 'Token ve Kanal ID\'si gereklidir' }
